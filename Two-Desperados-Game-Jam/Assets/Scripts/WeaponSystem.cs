@@ -68,12 +68,8 @@ public class WeaponSystem : MonoBehaviour{
         Vector3 direction = m_camera.transform.forward + new Vector3(x, y, 0);
 
         if (Physics.Raycast(m_camera.transform.position, direction, out m_rayHit, m_range, m_whatIsEnemy)){
-            Debug.Log(m_rayHit.collider.name);
             if (m_rayHit.collider.CompareTag("Enemy")){
-
-                Debug.Log("Enemy pogodjen");
-                // radnja ako je enemy
-                // rayHit.collider.GetComponent<ShootingAi>().TakeDamage(damage);
+                m_rayHit.collider.GetComponent<EnemyContorller>().dealDamage(m_damage);
             }
         }
         GameObject impactObject = Instantiate(m_bulletHoleGraphic, m_rayHit.point, Quaternion.Euler(0, 180, 0));
