@@ -13,12 +13,11 @@ public class PlayerMotion : MonoBehaviour{
     private float m_verticalAxis;
     private float m_horizontalAxis;
 
-    
+
     void Update(){
         // Axes
         m_verticalAxis = Input.GetAxis("Vertical");
         m_horizontalAxis = Input.GetAxis("Horizontal");
-
         Vector3 move = transform.right * m_horizontalAxis + transform.forward * m_verticalAxis;
         if(Input.GetKey(KeyCode.LeftShift) && m_verticalAxis > 0) m_controller.Move(move * m_sprintSpeed * Time.deltaTime);
         else m_controller.Move(move * m_speed * Time.deltaTime);

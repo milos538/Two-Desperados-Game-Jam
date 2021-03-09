@@ -8945,6 +8945,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_health: 100
   text: {fileID: 1395732387}
+  m_playerRagdoll: {fileID: 0}
 --- !u!54 &2121733414
 Rigidbody:
   m_ObjectHideFlags: 0
