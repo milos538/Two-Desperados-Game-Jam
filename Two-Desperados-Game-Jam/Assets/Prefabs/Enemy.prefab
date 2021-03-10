@@ -140,7 +140,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_health: 15
   m_animator: {fileID: 1007723198764193619}
-  m_lookRadius: 200
+  m_lookRadius: 500
 --- !u!54 &1007723197998396999
 Rigidbody:
   m_ObjectHideFlags: 0
