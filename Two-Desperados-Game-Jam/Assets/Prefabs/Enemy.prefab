@@ -81,7 +81,7 @@ GameObject:
   - component: {fileID: 1007723197998396997}
   - component: {fileID: 1007723197998396999}
   - component: {fileID: 1007723197998396998}
-  - component: {fileID: 4319850925907219391}
+  - component: {fileID: 82561637200708410}
   m_Layer: 10
   m_Name: Enemy
   m_TagString: Enemy
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_health: 15
   m_animator: {fileID: 1007723198764193619}
-  m_lookRadius: 100
+  m_lookRadius: 200
 --- !u!54 &1007723197998396999
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -171,7 +171,7 @@ CapsuleCollider:
   m_Height: 23.359924
   m_Direction: 1
   m_Center: {x: 0.4, y: 11.6, z: 2.5}
---- !u!82 &4319850925907219391
+--- !u!82 &82561637200708410
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -183,7 +183,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 082f216ff188b084fb51945b185c8e9a, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.433
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -191,10 +191,10 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  MinDistance: 0.1
+  MaxDistance: 100
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -227,7 +227,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.993
       inSlope: 0
       outSlope: 0
       tangentMode: 0

@@ -5,11 +5,13 @@ using TMPro;
 using UnityEngine.Playables;
 using UnityEngine.SceneManagement;
 
-public class sleepTrigger : MonoBehaviour{
+public class buttonTrigger : MonoBehaviour{
 
     private bool m_isInRange = false;
     public TextMeshProUGUI m_tekst;
     public PlayableDirector m_cutscene;
+    public string m_levelName;
+    public int m_timeToWaitForCutscene;
 
     void OnTriggerEnter(Collider other){
         if (other.gameObject.tag == "Player")
@@ -35,12 +37,12 @@ public class sleepTrigger : MonoBehaviour{
         {
             m_isInRange = false;
             m_cutscene.Play();
-            StartCoroutine(LoadLevelAfterDelay(6));
+            StartCoroutine(LoadLevelAfterDelay(m_timeToWaitForCutscene));
         }
     }
     IEnumerator LoadLevelAfterDelay(float delay){
         yield return new WaitForSeconds(delay);
-        SceneManager.LoadScene("Room 2");
+        SceneManager.LoadScene(m_levelName);
     }
 
 }
