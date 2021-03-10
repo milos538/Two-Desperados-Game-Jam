@@ -20,10 +20,6 @@ public class PlayerSpecs : MonoBehaviour
 
     void dead()
     {
-        GameObject gem = (GameObject)Instantiate(m_playerRagdoll);
-        gem.transform.position = transform.position;
-        foreach (Transform child in transform){
-            GameObject.Destroy(child.gameObject);
-        }
+        
     }
 }

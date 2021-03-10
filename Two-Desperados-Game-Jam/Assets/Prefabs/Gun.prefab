@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8039728281704443147}
   - component: {fileID: 8039728281704443146}
+  - component: {fileID: 95592383096511050}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -49,10 +50,9 @@ MonoBehaviour:
   m_magazineSize: 12
   m_bulletsPerTap: 1
   m_timeBetweenTwoBullets: 0.02
-  m_spread: 0.02
+  m_spread: 0.01
   m_range: 100
   m_reloadTime: 3
-  m_timeBetweenShootings: 0.05
   m_allowedButtonHold: 0
   m_bulletText: {fileID: 0}
   m_camera: {fileID: 0}
@@ -61,7 +61,29 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   m_bulletHoleGraphic: {fileID: 100006, guid: bd42f1aa39c9a70499034188b32caa2f, type: 3}
+  m_bloodEffect: {fileID: 4446951215244004527, guid: f796266f8fef19c40a82473cb639f9d5,
+    type: 3}
   m_muzzleFlash: {fileID: 8039728282549933955}
+  m_firingSound: {fileID: 0}
+--- !u!95 &95592383096511050
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8039728281704443144}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a96fa7101991b3f4f9598eebbfb06e3c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8039728281857216885
 GameObject:
   m_ObjectHideFlags: 0

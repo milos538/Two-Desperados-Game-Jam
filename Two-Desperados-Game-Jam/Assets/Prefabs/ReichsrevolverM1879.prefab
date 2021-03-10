@@ -791,7 +791,6 @@ GameObject:
   m_Component:
   - component: {fileID: 439302}
   - component: {fileID: 9576234}
-  - component: {fileID: 11432932}
   m_Layer: 0
   m_Name: ReichsrevolverM1879
   m_TagString: Untagged
@@ -834,20 +833,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &11432932
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 150636}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ba1eb098b83bdd49af0900e1d4ae815, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  revRotSpeed: 10
-  cylTr: {fileID: 430518}
 --- !u!1 &153796
 GameObject:
   m_ObjectHideFlags: 0

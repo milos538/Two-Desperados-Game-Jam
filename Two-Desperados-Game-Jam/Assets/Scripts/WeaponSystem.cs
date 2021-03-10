@@ -11,7 +11,7 @@ public class WeaponSystem : MonoBehaviour{
     private int m_bulletsLeft, m_bulletsShot;
 
     public float m_timeBetweenTwoBullets, m_spread;
-    public float m_range, m_reloadTime, m_timeBetweenShootings;
+    public float m_range, m_reloadTime;
 
     public bool m_allowedButtonHold;
     private bool m_shooting, m_readyToShoot, m_reloading;
@@ -22,9 +22,11 @@ public class WeaponSystem : MonoBehaviour{
     public Transform m_attackPoint;
     public RaycastHit m_rayHit;
     public LayerMask m_whatIsEnemy;
+    public Animator m_animator;
 
     // Efekti
     public GameObject m_bulletHoleGraphic;
+    public ParticleSystem m_bloodEffect;
     public ParticleSystem m_muzzleFlash;
     public AudioSource m_firingSound;
     private void Start(){
@@ -61,19 +63,22 @@ public class WeaponSystem : MonoBehaviour{
     }
     private void shoot(){
         m_muzzleFlash.Play();
+        m_animator.SetTrigger("Shot1");
         m_readyToShoot = false;
         float x = Random.Range(-m_spread, m_spread);
         float y = Random.Range(-m_spread, m_spread);
 
         Vector3 direction = m_camera.transform.forward + new Vector3(x, y, 0);
 
-        if (Physics.Raycast(m_camera.transform.position, direction, out m_rayHit, m_range, m_whatIsEnemy)){
+        if (Physics.Raycast(m_camera.transform.position, direction, out m_rayHit, m_range)){
             if (m_rayHit.collider.CompareTag("Enemy")){
                 m_rayHit.collider.GetComponent<EnemyContorller>().dealDamage(m_damage);
+                ParticleSystem blood = Instantiate(m_bloodEffect, m_rayHit.point, Quaternion.Euler(0, 180, 0));
+                Destroy(blood, 1f);
             }
         }
         GameObject impactObject = Instantiate(m_bulletHoleGraphic, m_rayHit.point, Quaternion.Euler(0, 180, 0));
-        Destroy(impactObject, 1f);
+        Destroy(impactObject, 2f);
         --m_bulletsLeft;
         --m_bulletsShot;
         Invoke("resetShot", m_timeBetweenTwoBullets);

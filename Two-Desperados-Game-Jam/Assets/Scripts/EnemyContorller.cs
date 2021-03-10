@@ -58,5 +58,10 @@ public class EnemyContorller : MonoBehaviour{
             m_animator.SetBool("Dead", true);
             Destroy(gameObject, 2.5f);
         }
+        else
+        {
+            m_animator.SetBool("Running", false);
+            m_animator.SetBool("Attacking", false);
+        }
     }
 }
