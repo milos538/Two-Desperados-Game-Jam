@@ -1,4 +1,4 @@
-# Two-Desperados-Game-Jam 
+# Westland
 <a href="https://imgbb.com/"><img src="https://i.ibb.co/hfcbnH3/westland-Logo.png" width="350px" alt="westland-Logo" border="0" alt="Logo" align="right" /></a>
 3D First-person shooter game. Personal project done as part of the Two desperados game jam competition in March 2021. The topic of the project was 4 randomly drawn words:<br/>
 * retro 
